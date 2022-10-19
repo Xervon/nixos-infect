@@ -304,7 +304,7 @@ infect() {
       build \
         --no-write-lock-file \
         --profile /nix/var/nix/profiles/system \
-	"$NIXOS_FLAKE#nixosConfigurations.$(hostname).config.system.build.toplevel"
+	"$NIXOS_FLAKE#nixosConfigurations.\"$(hostname -f)\".config.system.build.toplevel"
 EOF
     nix-shell -p busybox -p git --run "bash /tmp/install.sh"
     rm -f /tmp/install.sh
