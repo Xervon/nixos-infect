@@ -333,6 +333,7 @@ EOF
     mount "$esp" /boot
     find /boot -depth ! -path /boot -exec rm -rf {} +
   fi
+  mount -a
   /nix/var/nix/profiles/system/bin/switch-to-configuration boot
 }
 
